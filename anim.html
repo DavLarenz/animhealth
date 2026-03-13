@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animal Health Store</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styleanim.css">
+<script src="script.js"></script>
+
+<style>
+        body {
+    background-color: #121212;
+    color: white;
+    font-family: ,;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: #1e1e1e;
+    
+}
+
+.navbar-brand,
+.nav-link {
+    color: white !important;
+}
+
+/* HERO SECTION */
+.hero {
+    background:url('Images/pexels-minan1398-693651.jpg') center/cover no-repeat;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.hero h1 {
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+/* CARDS */
+.card {
+    background-color: #1e1e1e;
+    color: white;
+    border: none;
+}
+
+.card img {
+    height: 180px;
+    object-fit: cover;
+}
+
+/* SECTIONS */
+#upload, #cart {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* INPUT FIELDS */
+input, select {
+    background-color: #2a2a2a !important;
+    color: white !important;
+    border: 1px solid #444 !important;
+}
+
+input::placeholder {
+    color: #bbb;
+}
+
+/* LIST GROUP */
+.list-group-item {
+    background-color: #2a2a2a;
+    color: white;
+    border: none;
+}
+
+/* BUTTONS */
+.btn-success {
+    background-color: #2e7d32;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #1565c0;
+    border: none;
+}
+
+/* FOOTER */
+.footer {
+            background-color: #2e7d32;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+/* PRODUCT CARDS HOVER EFFECT */
+.card {
+    background-color: #1e1e1e;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.card img {
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* HOVER: lift + green glow */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px 3px rgba(76, 175, 80, 0.7); /* green glow */
+    cursor: pointer;
+}
+
+/* PRODUCT INFO */
+.card h5, .card p {
+    margin: 5px 0;
+}
+
+/* BUTTON STYLING */
+.btn-success, .card button {
+    background-color: #4CAF50; /* brighter green */
+    color: #1e1e1e;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-success:hover, .card button:hover {
+    background-color: #43A047;
+    transform: scale(1.05);
+}
+
+.nav-link {
+    color: white !important;
+    transition: color 0.3s;
+}
+.nav-link:hover {
+    color: #4CAF50 !important; /* matches green hover theme on cards */
+}
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg">
+<div class="container">
+  <a class="navbar-brand" href="#">Animal Health Store</a>
+  <ul class="navbar-nav ms-auto d-flex flex-row gap-3">
+    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+    <li class="nav-item"><a class="nav-link" href="#upload">Upload Prescription</a></li>
+    <li class="nav-item"><a class="nav-link" href="#cart">Cart</a></li>
+  </ul>
+</div>
+</nav>
+
+<!-- HERO -->
+<div class="hero text-center">
+<h1>Quality Animal Medicines</h1>
+</div>
+
+<!-- PRODUCTS -->
+<div class="container mt-5">
+<h2 class="text-center mb-4">Products</h2>
+<div class="row">
+
+<!-- PRODUCT TEMPLATE -->
+<div class="col-md-4">
+<div class="card">
+<img src="Images/antibioticinjection.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Antibiotic Injection</h5>
+<p>KES 1500</p>
+<button class="btn btn-success" onclick="addToCart('Antibiotic Injection',1500)">Add</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card">
+<img src="Images/vitaminsupplement.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Vitamin Concentrate</h5>
+<p>KES 800</p>
+<button class="btn btn-success" onclick="addToCart('Vitamin Concentrate',800)">Add</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card">
+<img src="Images/dewormertablets.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Dewormer Tablets</h5>
+<p>KES 500</p>
+<button class="btn btn-success" onclick="addToCart('Dewormer Tablets',500)">Add</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card">
+<img src="Images/vaccine.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Livestock Vaccine</h5>
+<p>KES 2000</p>
+<button class="btn btn-success" onclick="addToCart('Livestock Vaccine',2000)">Add</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card">
+<img src="Images/tickcontrol.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Tick Control Spray</h5>
+<p>KES 1200</p>
+<button class="btn btn-success" onclick="addToCart('Tick Control Spray',1200)">Add</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card">
+<img src="Images/mineralsupplement.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Mineral Supplement</h5>
+<p>KES 900</p>
+<button class="btn btn-success" onclick="addToCart('Mineral Supplement',900)">Add</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card">
+<img src="Images/woundspray.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Wound Spray</h5>
+<p>KES 600</p>
+<button class="btn btn-success" onclick="addToCart('Wound Spray',600)">Add</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card">
+<img src="Images/calciumboost.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Calcium Boost</h5>
+<p>KES 1100</p>
+<button class="btn btn-success" onclick="addToCart('Calcium Boost',1100)">Add</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card">
+<img src="Images/energy boost.jpg" class="card-img-top">
+<div class="card-body">
+<h5>Energy Booster</h5>
+<p>KES 1300</p>
+<button class="btn btn-success" onclick="addToCart('Energy Booster',1300)">Add</button>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- PRESCRIPTION UPLOAD -->
+<div class="container mt-5" id="upload">
+    <h2 class="text-center mb-4">Upload Prescription</h2>
+    <form>
+        <div class="mb-3">
+            <input type="file" class="form-control">
+        </div>
+        <button class="btn btn-primary">Upload</button>
+    </form>
+</div>
+
+<!-- CART -->
+<div class="container mt-5" id="cart">
+    <h2 class="text-center mb-4">Shopping Cart</h2>
+    <ul class="list-group" id="cart-items"></ul>
+<h4 class="mt-3">Total: KES <span id="cart-total">0</span></h4>
+    <h4 class="mt-3"></h4>
+    <div class="d-flex justify-content-center gap-3 mt-3">
+    <button class="btn btn-danger" onclick="clearCart()">Clear Cart</button>
+    <button class="btn btn-success" onclick="proceedToCheckout()">Proceed to Checkout</button>
+</div>
+</div>
+
+<!-- CHECKOUT -->
+<div class="container mt-5" id="checkout">
+  <h2 class="text-center mb-4">Checkout</h2>
+
+  <form id="checkout-form">
+    <!-- Full Name -->
+    <div class="mb-3">
+      <label for="fullName" class="form-label">Full Name</label>
+      <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+    </div>
+
+    <!-- Delivery Address -->
+    <div class="mb-3">
+      <label for="address" class="form-label">Delivery Address</label>
+      <input type="text" class="form-control" id="address" placeholder="Enter your delivery address" required>
+    </div>
+
+    <!-- Phone Number -->
+    <div class="mb-3">
+      <label for="phone" class="form-label">Phone Number</label>
+      <input type="tel" class="form-control" id="phone" placeholder="2547XXXXXXXX" required>
+    </div>
+
+    <!-- Payment Method -->
+    <div class="mb-3">
+      <label for="paymentMethod" class="form-label">Payment Method</label>
+      <select class="form-control" id="paymentMethod">
+        <option value="mpesa">M-Pesa</option>
+        <option value="card">Card</option>
+      </select>
+    </div>
+
+    <!-- Submit -->
+    <button type="submit" class="btn btn-success">Place Order</button>
+  </form>
+
+  <div id="order-message" class="mt-3"></div>
+</div>
+
+<div id="order-message" class="mt-3"></div>
+
+<footer class="mt-5">
+     <div class="container text-center text-white py-4">
+    <!-- Branding / Logo -->
+    <div class="mb-3">
+      <h5 style="font-family: 'Poppins', sans-serif; font-weight: 600;">
+        Animal Health Store
+      </h5>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="mb-2">
+      <p style="margin:0;">📞 +254 732 940 697 | ✉️ info@animalhealthstore.co.ke</p>
+      <p style="margin:0;">🏠 Nairobi, Kenya</p>
+    </div>
+
+
+ <!-- Copyright -->
+    <div class="mt-3">
+      <p style="margin:0;">&copy; 2026 Animal Health Store. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

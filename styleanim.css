@@ -1,0 +1,154 @@
+body {
+    background-color: #121212;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* NAVBAR */
+.navbar, h1, h2, h5 {
+    background-color: #1e1e1e;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.navbar-brand,
+.nav-link {
+    color: white !important;
+}
+
+/* HERO SECTION */
+.hero {
+    background:url('Images/pexels-minan1398-693651.jpg') center/cover no-repeat;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+
+.hero h1 {
+    position: relative;
+    z-index: 1;
+    color: white;
+    font-family: 'Amatic SC', cursive;
+    font-size: 3rem; /* makes hero text stand out */
+    font-weight: 700;
+}
+
+/* CARDS */
+.card {
+    background-color: #1e1e1e;
+    color: white;
+    border: none;
+}
+
+.card img {
+    height: 180px;
+    object-fit: cover;
+}
+
+/* SECTIONS */
+#upload, #cart {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* INPUT FIELDS */
+input, select {
+    background-color: #2a2a2a !important;
+    color: white !important;
+    border: 1px solid #444 !important;
+}
+
+input::placeholder {
+    color: #bbb;
+}
+
+/* LIST GROUP */
+.list-group-item {
+    background-color: #2a2a2a;
+    color: white;
+    border: none;
+}
+
+/* BUTTONS */
+.btn-success {
+    background-color: #2e7d32;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background-color: #1565c0;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+/* FOOTER */
+.footer {
+            background-color: #2e7d32;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        /* PRODUCT CARDS HOVER EFFECT */
+.card {
+    background-color: #1e1e1e;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+}
+
+.card img {
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* HOVER: lift + green glow */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px 3px rgba(76, 175, 80, 0.7);
+    cursor: pointer;
+}
+
+/* PRODUCT INFO */
+.card h5, .card p {
+    margin: 5px 0;
+}
+
+/* BUTTON STYLING */
+.btn-success, .card button {
+    background-color: #4CAF50;
+    color: #1e1e1e;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-success:hover, .card button:hover {
+    background-color: #43A047;
+    transform: scale(1.05);
+}
+
+.nav-link {
+    color: white !important;
+    transition: color 0.3s;
+}
+.nav-link:hover {
+    color: #4CAF50 !important; /* matches green hover theme on cards */
+}
